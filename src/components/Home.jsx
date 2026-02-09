@@ -35,7 +35,7 @@ export default function Home() {
             nextSlide();
         }, 5000);
         return () => clearInterval(timer); // 메모리 누수 방지
-    }, [currentIndex]);
+    }, []);
 
     // 홈 상품 리스트 랜덤하게 띄우기 위한 함수
     const shuffledProducts = useMemo(() => {
@@ -47,8 +47,9 @@ export default function Home() {
         <div className="mainContainer">
             <div className="banner-container">
                 <div className="banner">
-                    {/* public 폴더 내 이미지는 /images/... 로 바로 접근 가능합니다 */}
-                    <img src={banners[currentIndex]} alt="banner" width="1920" height="600" />
+                    {/* public 폴더 내 이미지는 images/... 로 바로 접근 가능합니다 */}
+                    <img src={import.meta.env.BASE_URL + banners[currentIndex]} 
+                        alt="banner" width="1920" height="600" />
                 </div>
                 
                 <button className="arrow left" onClick={prevSlide}>&#10094;</button>
@@ -59,7 +60,7 @@ export default function Home() {
                 {shuffledProducts.map(({id, img, model, color, category, title, price}) => (
                     <li key={id}>
                         <NavLink to={'/productDetail?id=' + id}>
-                            <img src={img} alt={title} className="thumbnail"/><br />
+                            <img src={import.meta.env.BASE_URL + img} alt={title} className="thumbnail"/><br />
                             <span className="price-span">{price.toLocaleString()}</span><br />
                             <span className="model-span">model</span>{model}<br />
                             {title}<br />
