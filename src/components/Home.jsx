@@ -59,7 +59,8 @@ export default function Home() {
                 {shuffledProducts.map(({id, img, model, color, category, title, price}) => (
                     <li key={id}>
                         <NavLink to={'/productDetail?id=' + id}>
-                            <img src={img} alt={title} className="thumbnail"/><br />
+                            <img src={import.meta.env.BASE_URL + 
+                                img.replace(/^\/+/,'')} alt={title} className="thumbnail"/><br />
                             <span className="price-span">{price.toLocaleString()}</span><br />
                             <span className="model-span">model</span>{model}<br />
                             {title}<br />

@@ -24,7 +24,6 @@ export default function ProductList() {
         title.includes(queryValue)
     );//searchList
 
-    // //검색할 때마다 보이는 상품리스트가 바뀌게 하고 싶으면 아래 변수 활성화 하기
     // const shuffledList = [...searchList].sort(() => Math.random() - 0.5);
 
     //필터링된 상품을 다시 맵 돌려서 랜더링
@@ -32,7 +31,8 @@ export default function ProductList() {
         return (
             <li key={id}>
             <NavLink to={'/productDetail?id='+id}>
-            <img src={img} alt={title} className="thumbnail" /><br />
+            <img src={import.meta.env.BASE_URL + 
+                img.replace(/^\/+/,'')} alt={title} className="thumbnail" /><br />
             <span className="price-span">{price.toLocaleString()}</span><br />
             <span className="model-span">model</span>{model}<br />
             {title}<br /><hr className="hr-line"/>

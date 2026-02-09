@@ -61,7 +61,7 @@ export default function Search() {
             />
             <button className="search-icon" onClick={onClickSubmit}> {/* 버튼을 누르면 주소 이동*/}
                 <img className="icon" 
-                    src="/public/images/to-look-for-icon-brown.jpg" 
+                    src="images/to-look-for-icon-brown.jpg" 
                     alt="search-icon" height="25"
                 />
             </button>
