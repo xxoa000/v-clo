@@ -1,0 +1,293 @@
+/* 기본 초기화 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+.product-details-page { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
+.bold { font-weight: bold; }
+.underline { text-decoration: underline; }
+
+/* 상품 상단 영역 */
+.product-top { display: flex; gap: 50px; margin-bottom: 50px; flex-wrap: wrap; align-items: flex-start; }
+.product-image { width: 470px; height: 600px; min-width: 350px; border-radius: 8px; overflow: hidden; background-color: #f8f8f8; flex-shrink: 0; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.product-info { flex: 1; min-width: 350px; }
+
+.price-row { display: flex; align-items: baseline; justify-content: flex-start; gap: 10px; margin-bottom: 12px; }
+.original { text-decoration: line-through; color: #bbb; margin: 0; font-size: 16px; }
+.sale { font-size: 28px; font-weight: 900; color: #222; margin: 0; letter-spacing: -0.5px; } 
+.discount { color: #ff4d4f; font-weight: 800; font-size: 22px; margin: 0; }
+.badges { display: flex; gap: 6px; margin: 20px 0; }
+.badge { background: #f5f5f5; font-size: 11px; padding: 5px 10px; border-radius: 3px; color: #666; border: 1px solid #eee; }
+
+/* 정보 박스 */
+.info-box { border-top: 1px solid #eee; padding: 22px 0; }
+.info-row { display: flex; margin-bottom: 14px; font-size: 14px; }
+.info-label { width: 85px; color: #333; flex-shrink: 0; font-weight: 500; }
+.info-value { color: #777; line-height: 1.5; }
+.sub-text2 { font-size: 14px; color:#d4a373; font-weight: 600; } 
+
+/* 옵션 선택 영역 */
+.option-selection { background: #fbfbfb; padding: 20px; border-radius: 6px; margin-bottom: 25px; text-align: left; border: 1px solid #f0f0f0; }
+.btn-size { 
+    display: inline-flex; 
+    align-items: center; 
+    padding: 10px 14px;
+    background-color: #ffffff; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer; 
+    margin: 4px;
+    transition: all 0.2s;
+}
+.btn-size:hover { border-color: #333; }
+.icon-delivery { width: 18px; height: auto; margin-right: 6px; }
+
+/* 선택된 아이템 리스트 - 이미지 및 적용 */
+.selected-items-list { margin: 20px 0; padding: 0 15px; background-color: #fff; border: 1px solid #333; border-radius: 4px; }
+.selected-item-box { display: flex; align-items: center; padding: 15px 0; gap: 15px; border-bottom: 1px solid #eee; }
+.selected-item-box:last-child { border-bottom: none; }
+.item-name { font-size: 14px; font-weight: 600; color: #333; min-width: 70px; flex-shrink: 0; }
+.item-control-row { display: flex; align-items: center; justify-content: space-between; flex: 1; } 
+
+/* 수량 조절 버튼 선 겹침 수정 */
+.count-btn-group { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 2px; height: 32px; overflow: hidden; background: #fff; }
+.count-btn-group button { width: 32px; height: 100%; border: none; background: none; cursor: pointer; font-size: 16px; color: #999; }
+.count-btn-group span { 
+    width: 40px; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 14px; 
+    font-weight: bold; 
+    border-left: 1px solid #ddd; 
+    border-right: 1px solid #ddd; 
+}
+
+.item-price-delete { display: flex; align-items: center; gap: 12px; font-weight: 800; color: #222; }
+.delete-x { border: none; background: none; color: #ccc; cursor: pointer; font-size: 18px; transition: color 0.2s; }
+.delete-x:hover { color: #333; }
+
+/* [수정 완료] 구매 섹션 - 이미지 레이아웃 최적화 */
+.total-price-row { display: flex; justify-content: space-between; align-items: center; margin: 25px 0 15px; }
+.total-price-row span { font-size: 16px; font-weight: bold; }
+.total-price-row strong { font-size: 30px; color: #222; font-weight: 900; }
+
+.action-group { display: flex; gap: 10px; height: auto; align-items: flex-end; } /* 버튼 바닥 정렬 */
+.btn-icon { display: flex; flex-direction: column; align-items: center; min-width: 50px; cursor: pointer; } 
+.btn-icon span { font-size: 12px; margin-top: 4px; font-weight: 600; color: #666; }
+.btn-cart { flex: 1; height: 56px; background: #333; color: #fff; border: none; font-size: 17px; font-weight: bold; cursor: pointer; }
+
+/* 네이버페이 텍스트 중앙 정렬 */
+.buy-wrap { flex: 1.6; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.pay-badge { font-size: 12px; color: #444; font-weight: 600; } 
+.btn-buy { width: 100%; height: 56px; background: #d4a373; color: #fff; border: none; font-size: 17px; font-weight: bold; cursor: pointer; }
+
+/* 탭 메뉴 */
+.tab-menu { display: flex; list-style: none; margin-top: 60px; padding: 0; width: 100%; border-bottom: 1px solid #ddd; }
+.tab-menu li { flex: 1; text-align: center; padding: 18px; font-size: 15px; cursor: pointer; border: 1px solid #eee; background: #f9f9f9; color: #888; }
+.tab-menu li.active { background: #d4a373; color: #fff; border-color: #d4a373; font-weight: bold; }
+
+/* 하단 멤버쉽 및 상세정보 */
+.membership-section {
+    background-color: #F3ECE4 !important;
+    padding: 10px 20px;
+    border: 2px solid #d4a373;
+    margin-top: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+.product-bottom-toggle {
+   margin-top: 20px;
+} 
+
+.membership-header { text-align: center; margin-bottom: 30px; }
+.benefit-list { display: flex; justify-content: center; gap: 25px; list-style: none; padding: 0; }
+.benefit-item { text-align: center; flex: 1; }
+.benefit-num { display: block; font-size: 22px; color: #d4a373; margin-bottom: 10px; opacity: 0.7; font-weight: 800; }
+
+.toggle-btn { width: 100%; padding: 16px; background: #fdfaf7 !important; border: 1px solid #e9e0d5 !important; color: #8a7b6a !important; font-weight: bold; cursor: pointer; margin-bottom: 50px; }
+
+/* 추천 상품 */
+.product_list2 { display: flex; justify-content: center; gap: 20px; padding: 0; list-style: none; flex-wrap: wrap; margin-top: 30px; }
+.product_item2 { width: 220px; border: 1px solid #f2f2f2; padding: 15px; transition: transform 0.2s; }
+.product_item2:hover { transform: translateY(-5px); }
+.img_area { width: 100%; height: 220px; overflow: hidden; margin-bottom: 10px; border-radius: 4px; }
+.img_area img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 구매 섹션 전체 컨테이너 */
+.buy-section {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* 총금액 강조 */
+.total-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.total-price-row span { font-size: 16px; font-weight: bold; color: #333; }
+.total-price-row strong { font-size: 30px; color: #222; font-weight: 900; }
+
+/* 메인 버튼 레이아웃 */
+.action-group {
+  display: flex;
+  gap: 8px; 
+  align-items: flex-end; 
+  margin-bottom: 30px;
+}
+
+/* 찜 아이콘 버튼 */
+.btn-icon {
+  width: 54px;
+  height: 56px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  cursor: pointer;
+}
+.btn-icon .icon { font-size: 18px; color: #666; }
+.btn-icon .count { font-size: 11px; color: #888; margin-top: 2px; }
+
+/* 장바구니 (Black) */
+.btn-cart {
+  flex: 1;
+  height: 56px;
+  background: #333;
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* SALE 텍스트 크기 조절 */
+.price_top .discount {
+  font-size: 14px;      
+  font-weight: bold;   
+  margin-right: 5px;    
+}
+.price_top .origin_price {
+  font-size: 13px;
+  color: #999;
+  text-decoration: line-through; 
+}.buy-wrap {
+  flex: 1.2;
+  position: relative;
+}
+.pay-badge {
+  position: absolute;
+  top: -34px; 
+  right: 0;
+  background: #ffeb00; 
+  color: #000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+.pay-badge::before { content: '●'; margin-right: 4px; font-size: 8px; }
+
+.btn-buy {
+  width: 100%;
+  height: 56px;
+  background: #d4a373; 
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 네이버 페이 섹션 */
+.naver-pay-section {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.naver-pay-container {
+  display: flex;
+  gap: 6px;
+  height: 52px;
+  margin-bottom: 12px;
+}
+
+/* 네이버 페이 메인 버튼 */
+.naver-pay-main-btn {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #00c73c;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.naver-pay-main-btn .n-logo {
+  background: #00c73c;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.naver-pay-main-btn .txt { font-size: 16px; font-weight: bold; color: #000; }
+
+/* 네이버 찜/톡 보조 버튼 */
+.naver-sub-btn {
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.talk-icon {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 50%;
+  color: #999;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 네이버 페이 이벤트 하단 */
+.naver-pay-event {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.event-badge {
+  color: #00c73c;
+  border: 1px solid #00c73c;
+  padding: 1px 4px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.event-txt { color: #00c73c; font-size: 12px; font-weight: 500; }

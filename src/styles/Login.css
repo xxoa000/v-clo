@@ -1,0 +1,188 @@
+/* index.css의 28: place-item 제거 */
+/* App.css의 4: padding 제거 */
+
+* {margin: 0; padding: 0; border: 0;}
+.login-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
+.login-container {
+    width: 640px;
+    height: 674px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.login-container header {
+    height: 64px;
+    position: relative;
+    border-bottom: 1px solid rgb(228, 230, 233);
+}
+
+/* 뒤로가기 버튼 */
+.login-container .backBtn {
+    width: 30px;
+    height: 30px;
+    position:absolute; top: 16.5px; left: 10px;
+    font-size: 27px; color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+
+.login-container nav {
+    position: relative;
+    height: 171px;
+}
+
+/* 인삿말 */
+.login-container nav > h3 {
+    width: 135px;
+    height: 68px;
+    position:absolute;
+    top: 45px; left: 30px;
+    font-size: 24px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    text-align: left;
+    letter-spacing: -2px;
+    line-height: 1.3;
+}
+
+/* 하위내용 */
+.login-container nav > span {
+    width: 592px;
+    height: 40x;
+    position:absolute;
+    top: 106px; left: 30px;
+    font-size: 15px;
+    color: rgb(122, 127, 134);;
+    text-align: left;
+    line-height: 40px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    
+}
+
+.login-container section {
+    position: relative;
+    height: 438px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 자식인 form을 가로 중앙으로 */
+    padding: 6px 24px;
+}
+
+/* form: input, submit */
+.login-container section form {
+    /* position:absolute; top: 0px; left: 0px; */ /* 이걸주면 가운데 정렬x */
+    width: 592px;
+    height: 190px;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;   /* 요소를 세로로 나열 */
+    align-items: center;      /* 가로축 중앙 정렬 */
+    gap: 12px;
+    
+}
+
+
+/* input을 감싸는 div */
+.login-container .input-group { 
+    width: 592px;
+    height: 46px;
+    border: 1px solid rgb(228, 230, 233);
+    border-radius: 6px;
+    cursor: text;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 43px;
+}
+/* input 아이콘 */
+.login-container .input-group  > span {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.25); 
+    font-weight: 400;           /* 기본 굵기 */
+    cursor: pointer;
+}
+
+/* input 태그 */
+.login-container .input {
+    width: 540px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+/* .input placeholder 스타일 */
+.login-container .input::-webkit-input-placeholder { 
+    color: #d1d4d8;       
+    font-weight: 400;    
+    opacity: 1;
+}
+
+/* 로그인 Button 태그 */
+.login-container .loginBtn {
+    width: 592px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background: rgb(32, 36, 41);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* 아이디 찾기, 패스워드 찾기, 회원가입 */
+.login-container article a {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.0175em;
+    padding: 0px 16px;
+}
+/* 링크글자 컬러 */
+.login-container article a:link, .login-container section article a:visited{
+    color: rgb(32, 36, 41);
+    
+}
+/*  */
+.login-container article span + span::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 12px;           
+    background-color: #ddd;
+    /* margin: 0 12px;         좌우 간격을  */
+    vertical-align: middle; /* 텍스트와 높낮이를  */
+}
+
+
+/* SNS 계정으로 로그인 */
+.login-container footer {
+    width: 592px;
+    height: 18px;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;   /* 요소를 세로로 나열 */
+    align-items: center;      /* 가로축 중앙 정렬 */
+    gap: 12px;
+    margin: 53px 0px 0px 0px;
+}
+
+.login-container footer span {
+    font-weight: 400;
+    font-size: 13px;
+    color: rgb(122, 127, 134);
+    display: flex;       /* 선과 글자를 한 줄로 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 100%;         /* 부모 너비를 가득 채움 */
+    gap: 16px;           /* 글자와 선 사이의 간격 */
+}
+/* 양옆 수평선 추가 */
+.login-container footer > span::before,
+.login-container footer > span::after {
+    content: '';
+    flex-grow: 1;        /* 빈 공간을 선으로 가득 채움 */
+    height: 1px;         /* 선 두께 */
+    background-color: #ebebeb; /* 선 색상 (사진처럼 연하게) */
+}
+
+.login-container footer div {
+    display: flex;
+    gap: 25px; 
+    margin: 10px 0px 0px 0px;
+}
