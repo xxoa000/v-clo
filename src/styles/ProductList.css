@@ -1,0 +1,136 @@
+* {margin:0; padding:0;}
+ul {
+    list-style: none;
+}
+
+.product-box {
+    margin: 60px auto 30px auto;
+}
+
+.productUl {
+    margin: 60px auto 30px auto;
+}
+
+.productUl > li {
+    border: 1px, solid, rgb(204, 204, 204);
+    display: inline-block;
+}
+
+.productUl > li > a {
+    color: #93867f;
+}
+
+.model-span {
+    width: 34px;
+    margin-right: 3px;
+    display: inline-block;
+    background-color: #d59c98;
+    border: 1px solid #ae6c56;
+    border-radius: 30%;
+    font-weight: bold;
+    font-size: 0.3em;
+    color:#f9f2f2;
+}
+
+.price-span {
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: #56473f
+}
+
+.category-span {
+    width: 45px;
+    display: inline;
+    padding: 0 3px 2px 3px;
+    /* background-color: #d6b49a;
+    border: 1px solid #ae765c; */
+    border-radius: 35%;
+    font-weight: bold;
+    font-size: 0.7em;
+    color:#874949;
+}
+
+.searchResult {
+    position: relative;
+    margin: 60px auto 30px auto;
+    font-style: italic;
+    width: 60%;
+    /* flex: 0 0 100%; */
+    color: rgb(177, 154, 146);
+}
+
+.main-box {
+    padding: 30px auto 0px auto;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+}
+
+.category-box {
+    margin: 30px auto 0px auto;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-evenly;
+    width: 35%; max-width: 700px;
+}
+
+.category-btn {
+    width: 90px;
+    height: 30px;
+    border: 2px solid rgba(212, 188, 167, 0.5);
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: inset -4px -4px 6px -3px rgba(232, 213, 200, 0.5);
+    border-bottom-color: #e3d0c2;
+    color: #c1896b;
+    font-weight: bold;
+}
+
+.category-btn:hover {
+    border-color: #807671;
+}
+
+.model {
+    background-color: rgb(255, 255, 255, 0.7);
+}
+
+.model:focus {
+    background-color: #ffcac6;
+}
+
+.category-btn:focus {
+    border: 2px solid rgb(184, 130, 81, 0.5);
+    background-color: #c1896b;
+    box-shadow: inset -4px -4px 6px -3px rgba(166, 125, 97, 0.5);
+    border-bottom-color: #ae7a56;
+    color: rgb(255, 244, 240);
+}
+
+.filter-box {
+    width: 90%; height: 30px;
+    margin: 0px auto 0px auto;
+    background-color: #eaeaea;
+    z-index: 999;
+}
+
+.filter-box > ul {
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 30px;
+    color: #7c6d65;
+}
+
+.filter-box > ul:focus {
+    font-weight: bold;
+}
+
+.thumbnail {
+    height: 350px; width:350px;
+    /* padding: 10px 10px 0 10px; */
+}
+
+.hr-line {
+    border: 1px solid #e8e4e2;
+    width: 70%;
+    margin: auto;
+}

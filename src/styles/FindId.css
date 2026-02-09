@@ -1,0 +1,123 @@
+* {margin: 0; padding: 0; border: 0;}
+.FindId-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
+.FindId-container {
+    width: 640px;
+    height: 479px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 뒤로가기 버튼, 아이디 찾기,확인 텍스트 */
+.FindId-container header {
+    height: 64px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 뒤로가기 버튼 */
+.FindId-container .backBtn {
+    width: 30px;
+    height: 30px;
+    position:absolute; top: 16.5px; left: 10px;
+    font-size: 27px; color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+/* 아이디 찾기,확인 텍스트 */
+.FindId-container header h2{
+    font-size: 20px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    display: block;
+}
+.FindId-container header span:active {
+    font-weight: bold;
+
+}
+
+.FindId-container section {
+    height: 415px;
+    position: relative;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.FindId-container nav {
+    position: relative;
+    height: 49px;
+    display: flex;
+    justify-content: center; /* 가로정렬 */
+    
+}
+.FindId-container nav div {
+    width: 202.66px;
+    height: 48px;
+    padding: 0px 6px;
+    display: flex;
+    align-items: center; /*수직 정렬 */
+    justify-content: center; /* 가로정렬 */
+    border-bottom: 1px solid rgb(228, 230, 233);
+}
+.FindId-container nav div span {
+    width: 202.66px;
+    /* font-weight: bold; */
+    font-size: 16px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+}
+
+
+/* input 태그 */
+.FindId-container .input  {
+    width: 503px;
+    height: 46px;
+    padding: 11px 16px;
+    box-sizing: border-box;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(32, 36, 41);
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+
+    border: 1px solid rgb(228, 230, 233);
+    border-radius: 6px;
+    outline: none;
+}
+.FindId-container .input.otp-input {
+    width: 608px;
+}
+
+/* .input placeholder 스타일 */
+.FindId-container .input::-webkit-input-placeholder { 
+    color: #d1d4d8;       
+    font-weight: 400;    
+    opacity: 1;
+}
+
+
+/* 아이디 확인 버튼 */
+.FindId-container .otpBtn {
+    width: 608px;
+    height: 52px;
+    padding: 0px 16px;
+    border-radius: 6px;
+    font-size: 16px; font-weight: 700; color: white;
+    background: rgb(32, 36, 41);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* 인증번호 요청 버튼 */
+.FindId-container .phoneBtn {
+    width: 96.77px;
+    height: 46px;
+    margin-left: 8px;
+    padding: 0px 16px;
+    border-radius: 6px;
+
+    font-size: 16px; font-weight: 700; color: white;
+    background: rgb(32, 36, 41);
+    border-radius: 8px;
+    cursor: pointer;
+}

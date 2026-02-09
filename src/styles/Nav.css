@@ -1,0 +1,113 @@
+/* 전체 헤더 메인 컨테이너 */
+.nav {
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 좌측 그룹과 우측 그룹을 양 끝으로 배치 */
+  padding: 0 60px; /* 양옆 여백 */
+  height: 90px;
+  background-color: white;
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  min-width: 1000px;
+}
+
+/* 1. 좌측 섹션 (로고 + 카테고리) */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* 로고와 첫 번째 카테고리 사이의 넉넉한 간격 */
+}
+
+.logo {
+  font-family: 'Playfair Display', serif; /* 세리프체 사용 시 더 고급스러움 */
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin: 0;
+  cursor: pointer;
+  color: #1a1a1a;
+
+  white-space: nowrap;
+}
+
+.nav-section {
+  display: flex;
+}
+
+.category-list {
+  display: flex;
+  list-style: none;
+  gap: 35px; /* 카테고리(A, B, C...) 사이의 간격 */
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.category-list li {
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.category-list li:hover {
+  color: #ffb6c1; /* 마우스 올렸을 때 아뜨랑스 핑크 포인트 */
+}
+
+.category-item {
+  position: relative;
+}
+
+.dropdown-menu {
+  background-color: rgb(255, 255, 255, 0.7);
+  position: absolute;
+  top: 30px; left: -35px;
+  padding: 10px auto 10px auto;
+  gap: 10px;
+  width: 100px;
+}
+
+/* 2. 우측 섹션 (검색창 + 유저메뉴) */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* 검색창과 유저 메뉴 사이의 간격 */
+}
+
+/* 로그인, 장바구니, 마이페이지 텍스트 메뉴 */
+.user-menu {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+.user-menu span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #777;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.user-menu span:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 반응형: 화면이 작아질 때 간격 조정 */
+@media (max-width: 1024px) {
+  .header-main {
+    padding: 0 30px;
+  }
+  .left-section {
+    gap: 40px;
+  }
+  .category-list {
+    gap: 20px;
+  }
+}

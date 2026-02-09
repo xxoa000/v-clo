@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "user": "김가연",
+    "comment": "만족합니다",
+    "rating": 5,
+    "option": "Ivory",
+    "status": "똑같아요"
+  },
+  {
+    "id": 2,
+    "user": "이지혜",
+    "comment": "색감이 너무 영롱해요! 사진보다 실물이 훨씬 예쁘네요.",
+    "rating": 5,
+    "option": "black",
+    "status": "똑같아요"
+  },
+  {
+    "id": 3,
+    "user": "최유리",
+    "comment": "재질이 보들보들해서 피부 예민한데도 편해요.",
+    "rating": 5,
+    "option": "Beige",
+    "status": "똑같아요"
+  },
+  {
+    "id": 4,
+    "user": "정소윤",
+    "comment": "배송은 진짜 칼배송이네요ㅋㅋ 덕분에 잘 썼습니다.",
+    "rating": 5,
+    "option": "mocha",
+    "status": "똑같아요"
+  },
+  {
+    "id": 5,
+    "user": "김민정",
+    "comment": "핏은 예쁜데 허리 부분이 살짝 커서 수선했어요.",
+    "rating": 4,
+    "option": "Ivory",
+    "status": "똑같아요"
+  },
+  {
+    "id": 6,
+    "user": "윤하은",
+    "comment": "매일 손이 가는 데일리 아이템이에요. 다른 색상도 살게요!",
+    "rating": 5,
+    "option": "mocha",
+    "status": "똑같아요"
+  }
+]

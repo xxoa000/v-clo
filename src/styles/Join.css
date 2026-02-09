@@ -1,0 +1,153 @@
+/* 기본 초기화 */
+* { margin: 0; padding: 0; border: 0; box-sizing: border-box; }
+.Join-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
+.Join-container {
+    width: 640px;
+    height: 674px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 헤더 */
+.Join-container header {
+    height: 64px;
+    position: relative;
+    border-bottom: 1px solid rgb(228, 230, 233);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 뒤로가기 버튼 */
+.Join-container .backBtn {
+    width: 30px;
+    height: 30px;
+    position:absolute; top: 16.5px; left: 10px;
+    font-size: 27px; color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+/* 회원가입 텍스트 */
+.Join-container header h2{
+    font-size: 20px;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    display: block;
+}
+
+/* 섹션 및 폼 레이아웃 */
+.Join-container section {
+    padding: 30px 24px;
+}
+
+.Join-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 항목 간 세로 간격 */
+}
+
+/* 개별 항목 (이름, 아이디 등) 정렬 */
+.Join-container form > div {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    min-height: 46px;
+    font-size: 14px;
+    color: rgb(32, 36, 41);
+}
+
+/* 텍스트(라벨) 부분 너비 고정 */
+/* "이름", "아이디" 등의 글자가 차지할 너비를 설정하여 입력창 시작점을 맞춥니다. */
+.Join-container form > div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 텍스트와 입력창 사이의 정렬을 위해 텍스트 부분만 따로 처리 */
+/* 텍스트 노드 자체를 선택할 수 없으므로, input의 margin-left를 이용하거나 
+   아래처럼 텍스트 공간을 강제로 확보합니다. */
+.Join-container form > div {
+    display: flex;
+    white-space: nowrap;
+}
+
+/* 텍스트 뒤에 오는 모든 입력창/셀렉트를 오른쪽으로 정렬 */
+.Join-container form > div input, 
+.Join-container form > div select {
+    margin-left: auto; /* 텍스트는 왼쪽, 입력창은 오른쪽 끝으로 붙임 */
+    width: 450px;      /* 입력창 너비 고정 */
+    height: 46px;
+    padding: 0 12px;
+    border: 1px solid rgb(228, 230, 233);
+    border-radius: 6px;
+    outline: none;
+}
+
+/* 휴대폰, 생년월일, 이메일 등 여러 요소가 섞인 항목 특수 처리 */
+.Join-container .phone, 
+.Join-container .birth, 
+.Join-container .email,
+.Join-container .accept {
+    display: flex !important;
+    justify-content: flex-start !important;
+}
+
+/* 이 항목들은 '전체 너비'가 아닌 내부 요소들이 조화롭게 배치되도록 수정 */
+.Join-container .phone input, 
+.Join-container .phone select,
+.Join-container .birth select,
+.Join-container .email input {
+    margin-left: 0 !important;
+    width: 100% !important; /* flex-grow를 위해 일시 설정 */
+    flex: 1;
+}
+
+/* 텍스트 영역 너비 확보 (이게 핵심입니다) */
+.Join-container form > div {
+    gap: 20px; /* 텍스트와 입력창 사이 간격 */
+}
+
+/* 텍스트 노드가 들어있는 각 div의 첫 번째 글자 정렬을 위해 가상의 공간 확보 */
+.Join-container form > div {
+    padding-left: 10px;
+}
+
+/* 추천인 아이디 등 단일 input 처리 */
+.Join-container .name-input,
+.Join-container .id-input,
+.Join-container .passwordF-input,
+.Join-container .passwordS-input,
+.Join-container .referrerId input {
+    width: 450px !important;
+    margin-left: auto !important;
+}
+
+/* 라디오 버튼 예/아니요 */
+.Join-container .accept input {
+    width: 18px !important;
+    height: 18px !important;
+    margin-left: 10px !important;
+    cursor: pointer;
+}
+
+/* 하단 버튼 */
+.Join-container .saveBtn, 
+.Join-container .resetBtn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.Join-container .saveBtn {
+    background: rgb(32, 36, 41);
+    color: white;
+}
+
+.Join-container .resetBtn {
+    background: #f5f6f7;
+    color: rgb(122, 127, 134);
+}
