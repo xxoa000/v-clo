@@ -24,7 +24,7 @@ export default function Section({setCartItems, cartItems, isLogin, id, handleApp
             </Routes>
         </div>
         <div className="chatSupport">
-            <img src="/public/images/talk-icon-brown.jpg" />
+            <img src="images/talk-icon-brown.jpg" />
         </div>
     </section>
 )}//Section

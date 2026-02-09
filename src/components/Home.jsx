@@ -8,12 +8,12 @@ export default function Home() {
 
     // 배너 이미지 경로 배열
     const banners = [
-        "public/images/banner1.jpg",
-        "public/images/banner2.jpg",
-        "public/images/banner3.jpg",
-        "public/images/banner4.jpg",
-        "public/images/banner5.jpg",
-        "public/images/banner6.jpg"
+        "images/banner1.jpg",
+        "images/banner2.jpg",
+        "images/banner3.jpg",
+        "images/banner4.jpg",
+        "images/banner5.jpg",
+        "images/banner6.jpg"
     ];
 
     // require 대신 선언된 useState 사용
