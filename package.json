@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://xxoa000.github.io/v-clo",
+  "homepage": "https://xxoa000.github.io/v-clo/",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
