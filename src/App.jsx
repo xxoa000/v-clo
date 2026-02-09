@@ -12,12 +12,27 @@ import FindId from './components/FindId';
 import FindPassword from './components/FindPassword';
 import Join from './components/Join';
 
-
 // import ProductDetail from './components/ProductDetails';
 
 import PayMent from './components/PayMent';
 import './styles/SideBar.css'
 import SideBar from './components/SideBar';
+
+function RedirectHandler() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get('redirect');
+            if (redirect) {
+                navigate(redirect.replace('/v-clo', '')
+                    , { replace: true })
+                //=> /my-vite : /repository_name (** 슬래시규칙 중요 **)
+            } //if
+    }, []);
+
+    return null;
+} //RedirectHandler
+
 
 
 
