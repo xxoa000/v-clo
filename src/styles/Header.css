@@ -1,0 +1,78 @@
+/* 기본 초기화 */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* 다른 요소보다 위에 보이도록*/
+  width: 100%;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 띠 배너 */
+.top-banner {
+  background-color: #000; 
+  color: #fff;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  position: relative;
+}
+
+.banner-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.banner-close {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* 메인 영역 */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

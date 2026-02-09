@@ -1,0 +1,309 @@
+/* 사이드바 전체 컨테이너 */
+.smart-sidebar-container {
+  position: fixed;
+  top: 150px; right: 0px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+/* 1. 사이드 아이콘 바 (우측 세로 바) */
+.sidebar-icons {
+  background: #fff;
+  border-radius: 30px 0 0 30px;
+  padding: 15px 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid #eee;
+}
+
+.icon-wrapper {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.icon-wrapper:hover, 
+.icon-wrapper.active {
+  color: #000;
+  background: #f1f1f1;
+}
+
+/* 2. 메뉴 툴팁 (마우스 호버 시 이름 노출) */
+.menu-tooltip {
+  position: absolute;
+  right: 55px; /* 아이콘 바 기준 왼쪽으로 위치 */
+  background: #333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+.tooltip {
+  letter-spacing: -3px;
+}
+
+.menu-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  transform: translateY(-50%);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #333;
+}
+
+.icon-wrapper:hover .menu-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 60px;
+}
+
+/* 카카오 아이콘 별도 스타일 */
+.kakao-icon {
+  background: #fee500;
+  color: #3c1e1e;
+  font-weight: bold;
+  font-size: 11px;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. 확장 메뉴 레이어 (오버레이) */
+.sidebar-overlay-content {
+  background: #fff;
+  width: 320px;
+  max-height: 80vh;
+  margin-right: 15px;
+  border-radius: 20px;
+  box-shadow: -5px 0 25px rgba(0,0,0,0.12);
+  border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.overlay-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  color: #888;
+}
+
+.menu-inner {
+  padding: 25px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.menu-inner h3 {
+  font-size: 19px;
+  margin-bottom: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-inner h3 .count {
+  font-size: 14px;
+  background: #ff4d4d;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* 4. 스마트 서치 필터 및 버튼 고정 스타일 */
+.search-bar-input-group {
+  position: relative;
+  margin-bottom: 20px;
+
+}
+
+.search-bar-input-group input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  font-size: 14px;
+}
+
+.inner-search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.filter-section {
+  border-bottom: 1px solid #f7f7f7;
+  margin-bottom: 5px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sub-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 15px;
+}
+
+/* [핵심] 필터 버튼 고정 스타일 (선택 시 검은색) */
+.opt-btn {
+  background: #f5f5f5;
+  border: 1px solid transparent;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.opt-btn:hover {
+  background: #eee;
+}
+
+.opt-btn.active-filter {
+  background: #000 !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.reset-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 13px;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #666;
+}
+
+/* 5. 마이픽(찜 목록) 리스트 스타일 */
+.wish-list-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.wish-item-mini {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.wish-item-mini:hover {
+  background: #fafafa;
+}
+
+.wish-img-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f0f0;
+  flex-shrink: 0;
+}
+
+.wish-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wish-info .name {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.wish-info .price {
+  font-size: 15px;
+  color: #111;
+  font-weight: 700;
+}
+
+.empty-wish {
+  text-align: center;
+  padding: 60px 0;
+  color: #ccc;
+}
+
+.empty-wish p {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 스크롤바 커스텀 */
+.filter-scroll-area::-webkit-scrollbar,
+.menu-inner::-webkit-scrollbar {
+  width: 4px;
+}
+
+.filter-scroll-area::-webkit-scrollbar-thumb,
+.menu-inner::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
